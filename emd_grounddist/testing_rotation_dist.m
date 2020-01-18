@@ -17,9 +17,17 @@ end
 angle_unit_cost = 20;
 diff_mat = squareform(orients_dist_vect');
 diff_mat = diff_mat/rotation_cost_unit;
+%% 
+a = [1 2 3 ; 12 4 5; 1 3 5 ; 134 5 3];
+k = 3;
 
-% Auxiliaray function to calculate the difference between two angles
+dist = localDistMtrx(a,k)
+
+
+
+%% Auxiliaray function to calculate the difference between two angles
 function absDiffDeg = angle_diff(a,b,max_angle)
     normDeg = mod(a-b,max_angle);
     absDiffDeg = min(max_angle-normDeg, normDeg);
 end 
+

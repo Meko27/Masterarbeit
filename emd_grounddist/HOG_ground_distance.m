@@ -58,7 +58,7 @@ orient_dist_cell = rotation_dist(orientations,signed);
 orient_dist_mat = repmat(orient_dist_cell,n_hog_bins/orientations);
 
 % Total ground distance matrix
-ground_dist = rotation_cost * rotation_cost*orient_dist_mat + move_cost * move_cost*spatial_dist_mat;
+ground_dist = rotation_cost * orient_dist_mat + move_cost * spatial_dist_mat;
 
 end 
 
